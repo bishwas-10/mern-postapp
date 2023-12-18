@@ -1,0 +1,1 @@
+export const CLIENT_ID_GOOGLE= process.env.CLIENT_ID as string;
