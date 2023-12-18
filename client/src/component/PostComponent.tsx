@@ -91,7 +91,7 @@ const PostComponent = ({
       <div className="flex flex-row justify-between">
         <div className="flex items-center mb-4">
           <img
-            src="creator-avatar.jpg"
+            
             alt="Creator"
             className="rounded-full h-8 w-8 mr-2"
           />
@@ -132,8 +132,8 @@ const PostComponent = ({
         )}
       </div>
       {showModal.status && (
-        <div className="absolute top-0 left-0 h-screen w-screen flex items-center justify-center bg-gray-600 z-20">
-          <div className=" w-[40%] h-content p-4 text-white border-2 rounded-md">
+        <div className=" flex items-center justify-center bg-gray-600 z-20">
+          <div className=" w-full h-content p-4 text-white border-2 rounded-md">
             <button
               className="relative -top-2 right-0  text-xl "
               onClick={() => setShowModal({ status: false, message: "" })}
