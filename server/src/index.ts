@@ -34,7 +34,9 @@ app.use("/api/posts", postRouter);
 app.use("/api/users", userRouter);
 app.use("/api/users", authRouter);
 
-
+app.get('/',(req,res)=>{
+  res.send("welcome ")
+})
 
 
 
