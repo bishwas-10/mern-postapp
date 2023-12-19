@@ -42,6 +42,7 @@ export const logIn = async (
         .cookie("access_token", token, {
           httpOnly: false,
           expires: expiryDate,
+          secure: true 
         })
         .status(200)
         .json({status:true, rest});
@@ -81,6 +82,7 @@ export const signUp = async (
     res.cookie("access_token", token, {
       httpOnly: false,
       expires: expiryDate,
+      secure: true 
     });
     res.status(201).json(rest);
     next();
@@ -113,7 +115,7 @@ export const google = async (
       res
         .cookie("access_token", token, {
           httpOnly: false,
-
+          secure: true ,
           expires: expiryDate,
         })
         .status(200)
@@ -145,6 +147,7 @@ export const google = async (
         .cookie("access_token", token, {
           httpOnly: false,
           expires: expiryDate,
+           secure: true 
         })
         .status(200)
         .json(rest);
