@@ -40,7 +40,7 @@ export const logIn = async (
       const expiryDate = new Date(Date.now() + 3600000); // 1 hour
       res
         .cookie("access_token", token, {
-          httpOnly: true,
+          httpOnly: false,
           expires: expiryDate,
         })
         .status(200)
@@ -79,7 +79,7 @@ export const signUp = async (
     const token = createSecretToken(user._id);
     const expiryDate = new Date(Date.now() + 3600000);
     res.cookie("access_token", token, {
-      httpOnly: true,
+      httpOnly: false,
       expires: expiryDate,
     });
     res.status(201).json(rest);
@@ -112,7 +112,7 @@ export const google = async (
       const expiryDate = new Date(Date.now() + 3600000); // 1 hour
       res
         .cookie("access_token", token, {
-          httpOnly: true,
+          httpOnly: false,
 
           expires: expiryDate,
         })
@@ -143,7 +143,7 @@ export const google = async (
 
       res
         .cookie("access_token", token, {
-          httpOnly: true,
+          httpOnly: false,
           expires: expiryDate,
         })
         .status(200)
