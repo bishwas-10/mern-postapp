@@ -45,17 +45,19 @@ const loggedUser = useSelector((state:RootState)=>state.auth);
 
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(formData.password!== formData.confirmPassword){
-      alert("both password fields do not match")
-      return;
-    }
+    
     if (!isSignedUp) {
+      if(formData.password!== formData.confirmPassword){
+        alert("both password fields do not match")
+        return;
+      }
       const userSignUpData = await userSignup(formData);
       if (userSignUpData) {
         dispatch(signInSuccess(userSignUpData));
        
       }
     } else {
+      
       const userSignInData = await userLogin(formData);
       console.log(userSignInData);
       if (!userSignInData.status) {

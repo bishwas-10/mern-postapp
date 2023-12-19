@@ -14,8 +14,9 @@ const PORT = process.env.PORT || 8000;
 
 app.use(
   cors({
-    origin: [`https://mern-postapp.vercel.app/`],
-    methods: ["GET,POST, PUT, DELETE, PATCH"],
+    origin: 'https://mern-postapp.vercel.app/',
+    methods: 'GET,POST, PUT, DELETE, PATCH',
+    allowedHeaders: 'Content-Type , Authorization',
     credentials: true,
   })
 );
@@ -35,7 +36,7 @@ app.use("/api/users", userRouter);
 app.use("/api/users", authRouter);
 
 app.get('/',(req,res)=>{
-  res.send("welcome ")
+  res.send("welcome")
 })
 
 
