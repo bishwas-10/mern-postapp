@@ -10,7 +10,7 @@ import {
 } from "../authSlice";
 // https://mern-postapp.onrender.com
 const instance = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://mern-postapp.onrender.com/api",
   withCredentials: true,
   // This assumes that the requests will be prefixed with '/api' and be redirected by the proxy during development
   // Other axios configurations if needed
