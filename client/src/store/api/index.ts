@@ -8,9 +8,9 @@ import {
   signInStart,
   signInSuccess,
 } from "../authSlice";
-
+// https://mern-postapp.onrender.com
 const instance = axios.create({
-  baseURL: "https://mern-postapp.onrender.com/api",
+  baseURL: "http://localhost:8000/api",
   withCredentials: true,
   // This assumes that the requests will be prefixed with '/api' and be redirected by the proxy during development
   // Other axios configurations if needed
@@ -70,7 +70,7 @@ export const likePost = async (id: Post["_id"]) => {
 export const userLogin = async (formData: FormProps) => {
   try {
     const { data } = await instance.post("/users/login", formData);
-    console.log(data);
+   
     return data;
   } catch (error) {
     console.log("Error loggin in:", error);

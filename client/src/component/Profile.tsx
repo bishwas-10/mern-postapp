@@ -21,7 +21,7 @@ import {
 } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
 const Profile: React.FC = () => {
-  console.log("profile rendered");
+
   const { currentUser, loading, error } = useSelector(
     (state: RootState) => state.auth
   );
