@@ -24,7 +24,7 @@ export const createPosts = async (
   next: NextFunction
 ) => {
   const post = req.body;
-  console.log(post)
+ 
   try {
     const newPost = await PostMessage.create({...post, creator: req.body.userId });
     

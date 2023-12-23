@@ -20,7 +20,7 @@ const OAuth = () => {
         email: result.user.email,
         photo: result.user.photoURL,
       });
-      console.log(data);
+     
       dispatch(signInSuccess(data));
     } catch (error) {
       console.log("could not login with google", error);

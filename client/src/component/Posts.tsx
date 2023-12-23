@@ -10,7 +10,7 @@ const Posts = ({
   setCurrentId: ChildProps["setCurrentId"];
 }) => {
   const posts = useSelector((state: RootState) => state.posts); // Accessing posts from Redux state
-  console.log(posts);
+  
 
   return (
     !posts.posts.length ?  <Loading /> :

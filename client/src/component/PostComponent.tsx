@@ -26,7 +26,7 @@ const PostComponent = ({
   post: Post;
   setCurrentId: ChildProps["setCurrentId"];
 }) => {
-  console.log("rendered");
+  
   const [showModal, setShowModal] = useState<ModalProps>({
     status: false,
     message: "",
@@ -47,7 +47,7 @@ const PostComponent = ({
   const handleLikeClick = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     const likedPost = await likePost(post._id);
-    console.log(likedPost);
+ 
     if (likedPost.status) {
       dispatch(likePostsSuccess(likedPost.post) as any);
     } else {

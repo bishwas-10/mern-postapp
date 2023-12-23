@@ -37,35 +37,29 @@ const iniitialFormState: FormProps = {
 const SignInPage = () => {
   const [isSignedUp, setIsSignedUp] = useState<boolean>(true);
   const [formData, setFormData] = useState<FormProps>(iniitialFormState);
-const loggedUser = useSelector((state:RootState)=>state.auth);
+  const loggedUser = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(isSignedUp);
-
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!isSignedUp) {
-      if(formData.password!== formData.confirmPassword){
-        alert("both password fields do not match")
+      if (formData.password !== formData.confirmPassword) {
+        alert("both password fields do not match");
         return;
       }
       const userSignUpData = await userSignup(formData);
       if (userSignUpData) {
         dispatch(signInSuccess(userSignUpData));
-       
       }
     } else {
-      
       const userSignInData = await userLogin(formData);
-      console.log(userSignInData);
+   
       if (!userSignInData.status) {
         dispatch(signInFailure(userSignInData));
-      } else { 
-        
+      } else {
         dispatch(signInSuccess(userSignInData.rest));
-       
       }
     }
   };
@@ -75,17 +69,15 @@ const loggedUser = useSelector((state:RootState)=>state.auth);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-   
-   setIsSignedUp(!isSignedUp);
+
+    setIsSignedUp(!isSignedUp);
   };
 
-  useEffect(()=>{
-    if(loggedUser.currentUser){
+  useEffect(() => {
+    if (loggedUser.currentUser) {
       navigate("/");
     }
-   
-  },[loggedUser.currentUser])
-
+  }, [loggedUser.currentUser]);
 
   return (
     <div className="min-h-screen  flex items-center justify-center bg-gray-100">

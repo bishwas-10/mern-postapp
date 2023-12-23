@@ -11,7 +11,7 @@ const app: Application = express();
 const MONGO_URL: string = process.env.MONGO_URL;
 const PORT = process.env.PORT || 8000;
 
-
+app.set("trust proxy", 1); // trust first proxy
 app.use(
   cors({
     origin: 'https://mern-postapp.vercel.app',

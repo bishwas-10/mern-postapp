@@ -83,7 +83,7 @@ const Profile: React.FC = () => {
         currentUser?._id as string,
         formData
       );
-      console.log(updatedData);
+     
       dispatch(userUpdateSuccess(updatedData));
       setUpdateSuccess(true)
     } catch (error) {
